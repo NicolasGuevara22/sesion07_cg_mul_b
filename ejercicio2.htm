@@ -1,18 +1,20 @@
-<canvas id="canvas" height=400/>
+<body>
+<canvas id="canvas">
 <script>
-function deg2rad(g) {
-  return (Math.PI / 180) * g
-
-function rotation(c, x, y, a){
-
+function deg2rad(g)
+{
+  return (Math.PI/180) *g;
+}
+function rotation(c,x, y,a)
+{
   c.translate(x, y); // translate to rectangle center
                           // x = x + 0.5 * width
                           // y = y + 0.5 * height
   c.rotate(deg2rad(a)); // rotate
-  c.translate(-x,-y); // translate back
-
+  c.translate(-x, -y); // translate back
 }
-function draw() {
+function draw() 
+{
   var ctx = document.getElementById('canvas').getContext('2d');
 
   // left rectangles, rotate from canvas origin
@@ -20,7 +22,7 @@ function draw() {
   // blue rect
   ctx.fillStyle = '#0095DD';
   ctx.fillRect(30, 30, 100, 100);
-  rotation(ctx, 0, 0, 25); //ctx.rotate(deg2rad(25));
+  ctx.rotate(deg2rad(25));
   // grey rect
   ctx.fillStyle = '#4D4E53';
   ctx.fillRect(30, 30, 100, 100);
@@ -31,12 +33,14 @@ function draw() {
   ctx.fillStyle = '#0095DD';
   ctx.fillRect(150, 30, 100, 100);
 
-  rotation(ctx, 250, 80, 45)
+rotation(ctx, 250, 80, 45);
 
   // draw grey rect
   ctx.fillStyle = '#4D4E53';
   ctx.fillRect(200, 30, 100, 100);
-
 }
-  draw()
-</script>
+draw()
+
+</script> 
+</canvas>
+</body>
